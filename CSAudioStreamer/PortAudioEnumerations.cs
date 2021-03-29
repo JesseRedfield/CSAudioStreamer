@@ -1,4 +1,4 @@
-﻿namespace PortAudioSharp
+﻿namespace CSAudioStreamer
 {
     /// <summary>
     /// Error codes returned by PortAudio functions.

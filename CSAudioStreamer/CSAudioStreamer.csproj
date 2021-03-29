@@ -1,7 +1,7 @@
 <Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
-    <AssemblyName>PortAudioSharp</AssemblyName>
-    <RootNamespace>PortAudioSharp</RootNamespace>
+    <AssemblyName>CSAudioStreamer</AssemblyName>
+    <RootNamespace>CSAudioStreamer</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <TargetFramework>netstandard2.0</TargetFramework>

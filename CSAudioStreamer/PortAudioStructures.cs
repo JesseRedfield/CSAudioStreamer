@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace PortAudioSharp
+namespace CSAudioStreamer
 {
 
     [StructLayout(LayoutKind.Sequential)]

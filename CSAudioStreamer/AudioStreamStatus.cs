@@ -1,4 +1,4 @@
-namespace PortAudioSharp
+namespace CSAudioStreamer
 {
     public enum AudioStreamStatus
     {

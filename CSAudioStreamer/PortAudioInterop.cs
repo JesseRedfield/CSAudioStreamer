@@ -2,7 +2,7 @@
 using System.Net;
 using System.Runtime.InteropServices;
 
-namespace PortAudioSharp.Native
+namespace CSAudioStreamer.Native
 {
     public static partial class Interop
     {
@@ -17,7 +17,7 @@ namespace PortAudioSharp.Native
         public static extern string Pa_GetErrorText([MarshalAs(UnmanagedType.I4)] PaErrorCode errorCode);
 
         /// <summary>
-        /// Library initialization function - call this before using PortAudioSharp
+        /// Library initialization function - call this before using CSAudioStreamer
         /// This function initializes internal data structures and prepares underlying
         /// host APIs for use.  With the exception of Pa_GetVersion(), Pa_GetVersionText(),
         /// and Pa_GetErrorText(), this function MUST be called before using any other
@@ -37,14 +37,14 @@ namespace PortAudioSharp.Native
         public static extern PaErrorCode Pa_Initialize();
 
         /// <summary>
-        /// Library termination function - call this when finished using PortAudioSharp
+        /// Library termination function - call this when finished using CSAudioStreamer
         /// This function deallocates all resources allocated by PortAudio since it was
         /// initialized by a call to Pa_Initialize(). In cases where Pa_Initialise() has
         /// been called multiple times, each call must be matched with a corresponding call
         /// to Pa_Terminate(). The final matching call to Pa_Terminate() will automatically
         /// close any PortAudio streams that are still open.
         ///
-        /// Pa_Terminate() MUST be called before exiting a program which uses PortAudioSharp
+        /// Pa_Terminate() MUST be called before exiting a program which uses CSAudioStreamer
         /// Failure to do so may result in serious resource leaks, such as audio devices
         /// not being available until the next reboot.
         /// </summary>
@@ -200,7 +200,7 @@ namespace PortAudioSharp.Native
         /// <returns></returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.I4)]
-        public delegate PaStreamCallbackResult PaStreamCallback(IntPtr input, IntPtr output, System.UInt32 frameCount, ref PaStreamCallbackTimeInfo timeInfo, 
+        public delegate PaStreamCallbackResult PaStreamCallback(IntPtr input, IntPtr output, System.UInt32 frameCount, ref PaStreamCallbackTimeInfo timeInfo,
             PaStreamCallbackFlags statusFlags, IntPtr userData);
 
         /// <summary>

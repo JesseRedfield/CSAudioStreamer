@@ -6,6 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PortAudioSharp\PortAudioSharp.csproj" />
+    <ProjectReference Include="..\CSAudioStreamer\CSAudioStreamer.csproj" />
   </ItemGroup>
 </Project>

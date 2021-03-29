@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
-using static PortAudioSharp.Native.Interop;
+using static CSAudioStreamer.Native.Interop;
 
-namespace PortAudioSharp
+namespace CSAudioStreamer
 {
     public class PortAudioOutputStream : IDisposable
     {
@@ -18,8 +18,9 @@ namespace PortAudioSharp
         private int mBitsPerSample = 16;
         private PaSampleFormat mSampleFormat = PaSampleFormat.Int16;
 
-        private void SetBitsPerSample() {
-            if((mSampleFormat & PaSampleFormat.Float32) != 0) mBitsPerSample = 32;
+        private void SetBitsPerSample()
+        {
+            if ((mSampleFormat & PaSampleFormat.Float32) != 0) mBitsPerSample = 32;
             if ((mSampleFormat & PaSampleFormat.Int32) != 0) mBitsPerSample = 32;
             if ((mSampleFormat & PaSampleFormat.Int24) != 0) mBitsPerSample = 24;
             if ((mSampleFormat & PaSampleFormat.Int16) != 0) mBitsPerSample = 16;
@@ -239,7 +240,7 @@ namespace PortAudioSharp
             outputParameters.hostApiSpecificStreamInfo = IntPtr.Zero;
             outputParameters.ChannelCount = mNumChannels;
             outputParameters.SampleFormat = mSampleFormat;
-            
+
             //todo: Device List and Pick default based on default API
             outputParameters.DeviceIndex = Pa_GetDefaultOutputDevice();
             IntPtr ptrStruct = Pa_GetDeviceInfo(outputParameters.DeviceIndex);

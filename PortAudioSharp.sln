@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.809.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioTest", "AudioTest\AudioTest.csproj", "{56BA2BFB-47D0-411C-ADD5-9659F1C8B7F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortAudioSharp", "PortAudioSharp\PortAudioSharp.csproj", "{0F4A352D-9ACE-4A51-930D-69DC2EB572DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSAudioStreamer", "CSAudioStreamer\CSAudioStreamer.csproj", "{0F4A352D-9ACE-4A51-930D-69DC2EB572DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

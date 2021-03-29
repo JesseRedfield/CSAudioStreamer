@@ -16,7 +16,7 @@ namespace AudioTest
 
         static void Main(string[] args)
         {
-            var stream = new PortAudioSharp.PortAudioOutputStream(SETTINGS.CHANNELS, SETTINGS.SAMPLE_RATE, PortAudioSharp.PaSampleFormat.Float32, SETTINGS.FRAMES_PER_SAMPLE);
+            var stream = new CSAudioStreamer.PortAudioOutputStream(SETTINGS.CHANNELS, SETTINGS.SAMPLE_RATE, CSAudioStreamer.PaSampleFormat.Float32, SETTINGS.FRAMES_PER_SAMPLE);
             CancellationTokenSource cancel = new CancellationTokenSource();
             stream.Stream(new DataProvider(), cancel.Token);
 
@@ -28,7 +28,7 @@ namespace AudioTest
         }
     }
 
-    class DataProvider : PortAudioSharp.AudioStreamDataDelegate
+    class DataProvider : CSAudioStreamer.AudioStreamDataDelegate
     {
         private const int tableSize = 200;
         private float[] sine = new float[tableSize];
@@ -46,13 +46,13 @@ namespace AudioTest
 
         public void StreamComplete()
         {
-            
+
         }
 
-        public PortAudioSharp.AudioStreamStatus TryGetData(out byte[] data)
+        public CSAudioStreamer.AudioStreamStatus TryGetData(out byte[] data)
         {
             List<byte> bytes = new List<byte>();
-            
+
             for (int i = 0; i < SETTINGS.FRAMES_PER_SAMPLE; i++)
             {
                 bytes.AddRange(BitConverter.GetBytes(sine[left_phase]));  // Use BitConverter to convert floats to byte arrays
@@ -66,7 +66,7 @@ namespace AudioTest
 
             data = bytes.ToArray();
 
-            return PortAudioSharp.AudioStreamStatus.Data;
+            return CSAudioStreamer.AudioStreamStatus.Data;
         }
     }
 }

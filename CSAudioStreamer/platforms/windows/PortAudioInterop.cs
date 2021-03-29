@@ -1,4 +1,4 @@
-﻿namespace PortAudioSharp.Native
+﻿namespace CSAudioStreamer.Native
 {
 	public static partial class Interop
 	{
